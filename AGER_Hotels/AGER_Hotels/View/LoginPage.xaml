@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="DarkViolet"
+             x:Class="AGER_Hotels.View.LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Source="c.png" Aspect="AspectFit" Margin="25" HorizontalOptions="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+           
+        </Grid>
+    </Grid>
+</ContentPage>

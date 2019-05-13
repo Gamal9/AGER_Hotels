@@ -11,7 +11,7 @@ namespace AGER_Hotels
         {
             InitializeComponent();
 
-            MainPage = new TransitionNavigationPage( new PresentationPage());
+            MainPage = (AppSettings.LastUserID == 0) ? new Helper.TransitionNavigationPage(new PresentationPage()) : new Helper.TransitionNavigationPage(new MainPage());
         }
 
         protected override void OnStart()

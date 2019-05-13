@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AGER_Hotels.Helper;
+using AGER_Hotels.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,13 @@ namespace AGER_Hotels
             public string Img { get; set; }
             public string Text { get; set; }
         }
-        
+        NavigationViewModel NavVM;
+        List<item> list;
         public PresentationPage()
         {
             InitializeComponent();
-            var list = new List<item>
+            
+            list = new List<item>
             {
                 new item
                 {
@@ -33,7 +37,7 @@ namespace AGER_Hotels
                 },
                 new item
                 {
-                    Img="CA.png",Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    Img="A.png",Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                 },
                 new item
                 {
@@ -44,6 +48,7 @@ namespace AGER_Hotels
             this.BindingContext = list;
            
         }
+        
 
         private void Button_Clicked(object sender, EventArgs e)
         {
@@ -52,9 +57,15 @@ namespace AGER_Hotels
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+            App.Current.MainPage = new MainPage();
         }
 
-        
+        private void Caro_PositionSelected(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
+        {
+            if(caro.Position+1==list.Count)
+                NextBtn.IsVisible = false;
+            else
+                NextBtn.IsVisible = true;
+        }
     }
 }
